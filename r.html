@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gamoci Skyy V1</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #1a0033, #3a0066);
+    color: #eee;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #d9b3ff;
+}
+
+h2 {
+    color: #c084fc;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Pengaturan Tampilan Gambar agar Sejajar */
+.product-gallery {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.product-gallery img {
+    width: calc(50% - 15px);
+    min-width: 250px;
+    border-radius: 15px;
+    transition: 0.3s;
+    border: 2px solid rgba(192, 132, 252, 0.3);
+}
+
+.product-gallery img:hover {
+    transform: scale(1.02);
+    border-color: #c084fc;
+}
+
+.price {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #ff6b6b;
+    font-size: 18px;
+}
+
+.new-price {
+    color: #4dff88;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    background: linear-gradient(45deg, #a855f7, #7c3aed);
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.feature {
+    margin: 10px 0;
+}
+
+.emoji {
+    font-size: 40px;
+    text-align: center;
+}
+
+.clock {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <h1>Gamoci Skyy V1</h1>
+        <p style="text-align:center;">
+        Gantungan kunci yang lucu, edukatif, dan menyenangkan.  
+        Cocok untuk anak-anak maupun hadiah spesial untuk orang tersayang.
+        </p>
+
+        <div class="emoji" id="emoji">😊</div>
+        <div class="clock" id="clock">00:00:00</div>
+    </div>
+
+    <div class="card">
+        <h2>Tampilan Produk</h2>
+        <div class="product-gallery">
+            <img src="foto1.jpg" alt="Gamoci Skyy V1 Tampilan Jam">
+            <img src="foto2.jpg" alt="Gamoci Skyy V1 Ekspresi Senang">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Fitur Unggulan</h2>
+
+        <div class="feature"><b>Jam Digital Interaktif</b><br>
+        Membantu anak mengenal waktu dengan cara yang menyenangkan.</div>
+
+        <div class="feature"><b>Info Cuaca Sederhana</b><br>
+        Menampilkan kondisi seperti cerah, hujan, atau berawan.</div>
+
+        <div class="feature"><b>GPS Simulasi Edukatif</b><br>
+        Mengenalkan lokasi seperti rumah, sekolah, dan taman.</div>
+
+        <div class="feature"><b>Emotikon Dinamis</b><br>
+        Ekspresi berubah otomatis membuat interaksi lebih hidup.</div>
+
+    </div>
+
+    <div class="card">
+        <h2>Kelebihan Produk</h2>
+        <ul>
+            <li>Desain ringan dan mudah dibawa</li>
+            <li>Layar interaktif yang menarik</li>
+            <li>Aman untuk anak (non-toxic dan sudut tumpul)</li>
+            <li>Isi ulang menggunakan type c</li>
+            <li>Cocok untuk gantungan tas</li>
+            <li>Bisa req warna case</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Promo Spesial</h2>
+        <p>
+        Cocok untuk hadiah, koleksi, atau teman sehari-hari yang menghibur.
+        </p>
+
+        <div class="price">
+            <div class="old-price">Rp150.000</div>
+            <div class="new-price">Rp120.000</div>
+        </div>
+
+        <a href="https://wa.me/6289669093762?text=Halo%20kak%2C%20saya%20mau%20pesan%20Gamoci%20Skyy%20V1%20promo%20Rp120.000%2C%20masih%20ready%3F" 
+        class="btn" target="_blank">
+        Pesan Sekarang
+        </a>
+    </div>
+
+</div>
+
+<script>
+// JAM DIGITAL
+function updateClock() {
+    let now = new Date();
+    document.getElementById("clock").innerText = now.toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+
+// EMOJI DINAMIS
+const emojis = ["😊","😍","😴","😎","🥰","😆","🤩"];
+setInterval(() => {
+    let random = emojis[Math.floor(Math.random() * emojis.length)];
+    document.getElementById("emoji").innerText = random;
+}, 2000);
+</script>
+
+</body>
+</html>
